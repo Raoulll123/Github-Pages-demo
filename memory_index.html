@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .fullscreen-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -100;
+        }
+        .fullscreen-bg__video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .top-div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            animation: slide 2s forwards;
+        }
+        @keyframes slide {
+            100% { width: 100%; }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="fullscreen-bg">
+        <!-- <video loop muted autoplay class="fullscreen-bg__video">
+            <source src="bg.mp4" type="video/mp4">
+        </video> -->
+        <img src="./img/spring_pic.png" alt="Your Image">
+    </div>
+    <div class="top-div">
+        <p> test</p>
+    </div>
+</body>
+</html>

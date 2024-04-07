@@ -277,7 +277,7 @@ const animationTimeline = () => {
 
   const replyBtn = document.getElementById("replay");
   replyBtn.addEventListener("click", () => {
-    window.location.href = "spring.html"; 
+    window.location.href = "message.html"; 
   });
 };
 
