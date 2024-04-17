@@ -277,7 +277,7 @@ const animationTimeline = () => {
 
   const replyBtn = document.getElementById("replay");
   replyBtn.addEventListener("click", () => {
-    window.location.href = "message.html"; 
+    window.location.href = "memory_index.html"; 
   });
 };
 

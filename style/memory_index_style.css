@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fullscreen-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+    opacity: 0;
+    filter: blur(0px);
+    /* animation: fadein 2s forwards, blur 3s forwards 1s; 2s delay */
+}
+.fullscreen-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This will make the image cover the whole area */
+    /* border: 10px solid white;
+    border-radius: 20px; */
+}
+.top-div-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 50%;
+    /* background: rgba(243, 185, 234, 0.5); */
+    background: #ffffff;
+    border-right: 1px solid black;
+    border-bottom: 0.5px solid black;
+    animation: slide 2s forwards 1s; /* 4s delay */
+}
+.top-div-left {
+    display: flex; /* Use flex layout */
+}
+.left-content, .right-content {
+    width: 50%; /* Each div takes up half of the width */
+    padding: 10px;
+    padding-top: 0; /* Add some padding */
+}
+.left-content {
+    display: flex;
+    flex-direction: column; /* Make the content stack vertically */
+    justify-content: center; /* Center the content vertically */
+    align-items: flex-start; /* Align the content to the left */
+    height: 100%; /* Take up the full height of the parent div */
+}
+.left-content p {
+    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+    opacity: 0;
+    animation: show_top_inner 2s forwards 1s; /* Show the text after 4s */
+    padding-left: 7vw;
+    text-align: left; /* Align the text to the left */
+    line-height: 2;
+}
+.clock {
+    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+    opacity: 0;
+    animation: show_top_inner 2s forwards 1s; /* Show the clock after 4s */
+    padding-left: 7vw;
+    text-align: left;
+    line-height: 2;
+}
+.top-div-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px; /* fixed width */
+    height: 50%;
+    /* background: rgba(0, 0, 0, 0.5); */
+    opacity: 0;
+    animation: push 2s forwards 1s, /* 4s delay */
+                fadein 2s forwards 1s; /* 4s delay */
+}
+.right-content {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    height: 100%; /* Take up the full height of the parent div */
+}
+.right-content img {
+    height: 90%; /* Set the height to 75% of the parent div */
+    width: 100%; /* Set the width to 80% of the parent div */
+    object-fit: contain; /* Preserve the aspect ratio of the image */
+    /* z-index: -1; */
+}
+.bottom-div-left {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    /* width: 100px; */
+    height: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    animation: pull 2s forwards 3s, /* 6s delay */
+                fadein 2s forwards 3s; /* 6s delay */
+}
+.bottom-div-right {
+    position: absolute;
+    /* display: flex; */
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border-left: 1px solid black;
+    border-top: 0.5px solid black;
+    animation: slide 2s forwards 3s; /* 8s delay */
+}
+@keyframes slide {
+    100% { width: 70%; }
+}
+@keyframes fadein {
+    100% { opacity: 1; }
+}
+@keyframes blur {
+    100% { filter: blur(5px); }
+}
+@keyframes push {
+    100% { left: 70%; }
+}
+@keyframes show_top_inner {
+    100% { opacity: 1; } /* Show the clock */
+}
+@keyframes pull {
+    100% { right: 70%; }
+}
+
