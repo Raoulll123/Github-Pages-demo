@@ -1,46 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        body {
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        .letter {
-            width: 50%;
-            height: 80%;
-            border: 1px solid #000;
-            background-color: #fff;
-            position: relative;
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        }
-        .letter::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-image: linear-gradient(white 2px, transparent 2px),
-                              linear-gradient(90deg, white 2px, transparent 2px),
-                              linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
-            background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-            z-index: -1;
-        }
-    </style>
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+@keyframes move {
+    0% { offset-distance: 0%; }
+    100% { offset-distance: 100%; }
+}
+#image {
+    offset-path: path('m126.99998,537.91315c26.10475,-128.71145 75.05116,-341.36514 189.25945,-332.97091c114.20829,8.39422 50.57796,432.30257 231.67967,457.48525c181.10172,25.18267 115.83984,-194.46621 358.94034,-218.24984c243.1005,-23.78364 182.73326,-156.6922 181.10177,-158.09121c1.63149,1.39902 -21.21017,-54.56248 -66.89348,-165.08644');
+    animation: move 10s infinite;
+    transform: translate(-25px, -25px);
+}
+#welcome-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 1s forwards;
+}
+/* 新增的CSS */
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+#fade-in-text {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 5s forwards;
+}
+</style>
 </head>
 <body>
-    <div class="letter">
-        <p>亲爱的朋友，</p>
-        <p>这是一封手写信的模拟。</p>
-        <p>祝你一切顺利！</p>
-    </div>
+
+<div id="welcome-text">欢迎乘坐G2207次列车，本次列车的终点站为开封北站</div>
+<!-- 新增的HTML -->
+<div id="fade-in-text">还记得这些车站嘛！据说终点站会有好东西等着你嗷！！</div>
+
+<svg width="1200" height="746" xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <title>Layer 1</title>
+        <path stroke="#000" id="svg_14" d="m126.99998,537.91315c26.10475,-128.71145 75.05116,-341.36514 189.25945,-332.97091c114.20829,8.39422 50.57796,432.30257 231.67967,457.48525c181.10172,25.18267 115.83984,-194.46621 358.94034,-218.24984c243.1005,-23.78364 182.73326,-156.6922 181.10177,-158.09121c1.63149,1.39902 -21.21017,-54.56248 -66.89348,-165.08644" opacity="NaN" fill="none"/>
+    </g>
+  <image id="image" href="./img/spring/car.png" width="50px" height="50px" />
+</svg>
+<script type="text/javascript">
+    document.body.addEventListener('click', function() {
+        window.location.href = './eLuvLetter/index.html';
+    });
+</script>
 </body>
 </html>
