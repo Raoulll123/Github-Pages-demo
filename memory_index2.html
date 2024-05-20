@@ -42,7 +42,8 @@
         width: 100vw;
         height: 100vh;
         background-color: transparent;
-        animation: slide1 3s forwards 6s;
+        /* animation: slide1 3s forwards 6s; */
+        animation: slide1 3s forwards;
         top: 100vh;
     }
     .tooltip {
@@ -82,8 +83,9 @@
             <div id="grid" style="width: 40vw;height:45vh;margin-left: 5vw;margin-top: 2vh;"></div>
             <p style="margin-top: -1vh;">都怪你，害我不能早睡了(～￣▽￣)～</p>
         </div>
-        <div style="background-color: transparent;border-left: 0.5px solid black;border-bottom: 0.5px solid black;">
+        <div style="text-align:center;background-color: transparent;border-left: 0.5px solid black;border-bottom: 0.5px solid black;">
             <div id="grid2" style="width: 40vw;height:45vh;margin-left: 5vw;margin-top: 2vh;"></div>
+            <p style="margin-top: -1vh;">中间少的应该是去和小小刘玩啦！</p>
         </div>
         <div style="background-color: transparent;border-top:0.5px solid black;border-right: 0.5px solid black;text-align: center;">
             <div>
@@ -95,13 +97,23 @@
             </div>
             <div id="tooltip" class="tooltip"></div>
         </div>
-        <div style="background-color: #c4986f;"></div>
+        <div style="background-color: transparent;border-top:0.5px solid black;border-left: 0.5px solid black;text-align: center;">
+            <div>
+                <p style="font-size:20px;padding-top: 3vh;"><b>猜猜发的最多的表情是哪个？</b></p>
+            </div>
+            <div style="margin-top: 5vh;">
+                <img src="https://mmbiz.qpic.cn/mmemoticon/Q3auHgzwzM7L7AZphhrl9eMaYwYOeMKUXZqsweTWMQsp7uINh8YVFibgGXuqKiaH1Q/0" alt="gif">
+            </div>
+            <div>
+                <p style="font-size:18px;padding-top: 10vh;">尴尬，好像很好猜，但是我们一共发了74563个呢！</p>
+            </div>
+        </div>
 
 </body>
 </html>
     <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('grid'));0
+        var myChart = echarts.init(document.getElementById('grid'));
 
         // 指定图表的配置项和数据
         var option = {
@@ -187,7 +199,7 @@
                 }
             },
             series: [{
-                data: [20430, 43705, 65271, 86409, 93976, 90089, 135308, 97300, 97686, 28115, 20921, 20220, 12256, 16718, 6430, 16210, 42708, 9377],
+                data: [20430, 43705, 65271, 86409, 93976, 90089, 135308, 97300, 97686, 78115, 20921, 20220, 12256, 66718, 86430, 86210, 72708, 9377],
                 type: 'bar',
                 label: {
                     show: true, // 显示标签
