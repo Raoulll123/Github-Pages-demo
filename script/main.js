@@ -9,9 +9,9 @@ const animationTimeline = () => {
       .join("</span><span>")}</span`;
   
   hbd.innerHTML = `<span>${hbd.innerHTML
-      .replace(/ /g, ' ')
-      .split("")
-      .join("</span><span>")}</span`;
+    .replace(/&nbsp;/g, '\u00A0')
+    .split("")
+    .join("</span><span>")}</span`;
 
   const ideaTextTrans = {
     opacity: 0,
